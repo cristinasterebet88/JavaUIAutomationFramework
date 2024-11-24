@@ -15,8 +15,15 @@
         <selenium-java.version>4.25.0</selenium-java.version>
         <selenium-api.version>4.25.0</selenium-api.version>
         <selenium-driver.version>4.25.0</selenium-driver.version>
+        <javafaker.version>1.0.2</javafaker.version>
     </properties>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafaker.version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
