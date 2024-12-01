@@ -35,10 +35,12 @@ public class RegisterPage extends Page {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", privacyToggleBar);
         Thread.sleep(500);
         privacyToggleBar.click();
-        System.out.println("The privacy ruled were accepted");
+        System.out.println("The privacy rules were accepted");
     }
 
-    public void clickOnTheContinueButton() {
+    public void clickOnTheContinueButton() throws InterruptedException {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", continueButton);
+        Thread.sleep(500);
         continueButton.click();
         System.out.println("The Continue button was clicked");
     }
