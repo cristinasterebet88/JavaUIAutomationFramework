@@ -33,14 +33,14 @@ public class RegisterPage extends Page {
 
     public void enableOnTheToggleBar() throws InterruptedException {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", privacyToggleBar);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         privacyToggleBar.click();
         System.out.println("The privacy rules were accepted");
     }
 
     public void clickOnTheContinueButton() throws InterruptedException {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", continueButton);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         continueButton.click();
         System.out.println("The Continue button was clicked");
     }
