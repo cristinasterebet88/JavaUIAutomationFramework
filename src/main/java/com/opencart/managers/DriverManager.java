@@ -21,6 +21,7 @@ public class DriverManager {
 //Permisiunea pentru cazul cand nu se permite conexiunea remote la anumite versiuni Chrome
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
+                options.addArguments("--incognito");
                 driver = new ChromeDriver(options);
                 driver.manage().window().maximize();
                 System.out.println("The Chrome driver is opened");

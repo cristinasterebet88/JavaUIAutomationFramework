@@ -1,5 +1,6 @@
 package com.opencart.pageobjects;
 
+import com.opencart.managers.ScrollManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,19 +29,17 @@ public class RegisterPage extends Page {
         lastNameInput.sendKeys(lastName);
         emailInput.sendKeys(email);
         passwordInput.sendKeys(password);
-        System.out.println("The form was completed for: " + email + "and password: " + password);
+        System.out.println("The form was completed for: " + email + " and password: " + password);
     }
 
-    public void enableOnTheToggleBar() throws InterruptedException {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", privacyToggleBar);
-        Thread.sleep(1000);
+    public void enableOnTheToggleBar() {
+        ScrollManager.ScrollToElement(privacyToggleBar);
         privacyToggleBar.click();
         System.out.println("The privacy rules were accepted");
     }
 
-    public void clickOnTheContinueButton() throws InterruptedException {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", continueButton);
-        Thread.sleep(1000);
+    public void clickOnTheContinueButton() {
+        ScrollManager.ScrollToElement(continueButton);
         continueButton.click();
         System.out.println("The Continue button was clicked");
     }
