@@ -3,9 +3,7 @@ package com.opencart.stepdefinitions;
 import com.opencart.managers.DataGeneratorManager;
 import com.opencart.managers.DriverManager;
 import com.opencart.pageobjects.RegisterPage;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Map;
@@ -22,18 +20,7 @@ public class RegisterPageSteps {
         String email = DataGeneratorManager.getRandomEmail();
         String password = DataGeneratorManager.getRandomPassword();
 
-        //Actions on the Register page
         registerPage.completeRegisterForm(firstName, lastName, email, password);
-    }
-
-    @And("the privacyPolicyToggle is enabled")
-    public void thePrivacyPolicyToggleIsEnabled() {
-        registerPage.enableOnTheToggleBar();
-    }
-
-    @And("continueButton is clicked")
-    public void continueButtonIsClicked() {
-        registerPage.clickOnTheContinueButton();
     }
 
     @When("the register form is populated as follows:")

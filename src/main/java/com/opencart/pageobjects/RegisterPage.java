@@ -31,16 +31,4 @@ public class RegisterPage extends Page {
         passwordInput.sendKeys(password);
         System.out.println("The form was completed for: " + email + " and password: " + password);
     }
-
-    public void enableOnTheToggleBar() {
-        ScrollManager.ScrollToElement(privacyToggleBar);
-        privacyToggleBar.click();
-        System.out.println("The privacy rules were accepted");
-    }
-
-    public void clickOnTheContinueButton() {
-        ScrollManager.ScrollToElement(continueButton);
-        continueButton.click();
-        System.out.println("The Continue button was clicked");
-    }
 }
