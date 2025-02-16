@@ -23,9 +23,4 @@ public class LoginPage extends Page {
         passwordInput.sendKeys(password);
         System.out.println("The login form was populated with data");
     }
-
-    public void clickTheLoginBtn() {
-        loginBtn.click();
-        System.out.println("Login button was clicked");
-    }
 }

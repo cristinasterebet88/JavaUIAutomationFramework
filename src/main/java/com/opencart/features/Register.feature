@@ -2,24 +2,24 @@ Feature: The register Flow test suite
 
   @run
   Scenario: The user is redirected to the Account page after successful registration
-    Given The "https://tekwillacademy-opencart.online/" is accessed
+    Given The "/" endpoint is accessed
     And RegisterPage is accessed from HomePage buttons
-    When the registration form is populated with valid random data
-    And the privacyPolicyToggle is enabled
-    And continueButton is clicked
+    And the registration form is populated with valid random data
+    And the "privacyToggleBar" from "RegisterPage" is clicked
+    When the "continueButton" from "RegisterPage" is clicked
     Then the new page url contains "success" keyword
 
   @run
   Scenario: The system keeps the user on the Registration when registering with valid data without accepting Privacy Rules
-    Given The "https://tekwillacademy-opencart.online/" is accessed
+    Given The "/" endpoint is accessed
     And RegisterPage is accessed from HomePage buttons
     When the registration form is populated with valid random data
-    And continueButton is clicked
+    When the "continueButton" from "RegisterPage" is clicked
     Then the new page url contains "register" keyword
 
   @run
   Scenario Outline: Error message is displayed when registering with invalid password length
-    Given The "https://tekwillacademy-opencart.online/" is accessed
+    Given The "/" endpoint is accessed
     And RegisterPage is accessed from HomePage buttons
     And the register form is populated as follows:
       | firstName | <firstName> |
@@ -27,7 +27,7 @@ Feature: The register Flow test suite
       | email     | RANDOM      |
       | password  | <password>  |
     And a thread sleep 5 seconds is executed
-    When continueButton is clicked
+    When the "continueButton" from "RegisterPage" is clicked
     Then the following list of error messages is displayed:
       | <errorFieldName> must be between <min> and <max> characters! |
       | Warning: You must agree to the Privacy Policy!               |

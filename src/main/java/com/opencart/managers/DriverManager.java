@@ -13,7 +13,7 @@ import java.sql.SQLOutput;
 public class DriverManager {
     private static DriverManager instance;
     WebDriver driver;
-    private static final String WEB_DRIVER_TYPE = "Chrome";
+    private static final String WEB_DRIVER_TYPE = ConfigReaderManager.getProperty("browserType");
 
     private DriverManager() {
         switch (WEB_DRIVER_TYPE.toUpperCase()) {
